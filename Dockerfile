@@ -1,9 +1,9 @@
 FROM alpine:3.5
 
-ENV VERSION 1.3.0
+RUN apk --no-cache add bash openjdk8-jre wget
 
-RUN apk --no-cache add bash openjdk8-jre wget && \
-mkdir /opt && cd /opt && \
+ENV VERSION 1.5.2
+RUN mkdir /opt && cd /opt && \
 wget https://archive.apache.org/dist/activemq/activemq-artemis/$VERSION/apache-artemis-$VERSION-bin.tar.gz && \
 tar xf apache-artemis-$VERSION-bin.tar.gz && \
 rm apache-artemis-$VERSION-bin.tar.gz && \
