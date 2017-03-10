@@ -1,6 +1,6 @@
 FROM alpine:3.5
 
-RUN apk --no-cache add bash openjdk8-jre wget
+RUN apk --no-cache add bash openjdk8-jre wget gettext
 
 ENV VERSION 1.5.3
 RUN mkdir /opt && cd /opt && \

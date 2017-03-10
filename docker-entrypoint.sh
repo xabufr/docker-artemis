@@ -17,7 +17,9 @@ if [[ "$ARTEMIS_MAX_MEMORY" ]]; then
 fi
 
 if [ "$1" = 'artemis-server' ]; then
-	  /opt/broker/bin/artemis run
+    envsubst < etc/broker.xml > etc/broker_tmp.xml
+    mv etc/broker_tmp.xml etc/broker.xml
+    exec /opt/broker/bin/artemis run
 fi
 
 exec "$@"
